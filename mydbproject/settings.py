@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-qn8(zvw3v9twgc3dy65f5$g7o^28$i3k0+z067b+58^)b*b4$_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [group9-hevica.azurewebsites.net]
 
 
 # Application definition
@@ -39,10 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myappcabahug'
+    #'django_extensions'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    #
+    'whitenoise.middleware.WhiteNoiseMiddleWare',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -136,6 +139,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = BASE_DIR/'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
