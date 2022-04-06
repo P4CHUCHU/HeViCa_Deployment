@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-qn8(zvw3v9twgc3dy65f5$g7o^28$i3k0+z067b+58^)b*b4$_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [group9-hevica.azurewebsites.net]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -76,30 +76,32 @@ TEMPLATES = [
 WSGI_APPLICATION = 'mydbproject.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydbproject',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        'OPTIONS': {
-        'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'group9@it342-student-group9',
+        'PASSWORD': 'HeViCa2022',
+        'HOST': 'it342-student-group9.postgres.database.azure.com',
+        'PORT': '5432',
+        'OPTIONS': {"sslmode":"require"},
     }
     
 }
+
+#DATABASES = {
+#   'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'mydbproject',
+#        'USER': 'root',
+#        'PASSWORD': '',
+#        'HOST': '127.0.0.1',
+#        'PORT': '3306',
+#        'OPTIONS': {
+#        'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#        },
+#    }  
+#}
 
 
 # Password validation
