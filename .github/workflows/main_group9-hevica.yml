@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'Group9-HeViCa'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2501C79080C540B3B6498A60B5702B45 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9309503AB7C443F681B37B5B30D4C297 }}
