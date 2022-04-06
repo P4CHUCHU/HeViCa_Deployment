@@ -44,8 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    #
-    'whitenoise.middleware.WhiteNoiseMiddleWare',
+    #'whitenoise.middleware.WhiteNoiseMiddleWare',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -60,7 +59,7 @@ ROOT_URLCONF = 'mydbproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,8 +84,7 @@ DATABASES = {
         'HOST': 'it342-student-group9.postgres.database.azure.com',
         'PORT': '5432',
         'OPTIONS': {"sslmode":"require"},
-    }
-    
+    }   
 }
 
 #DATABASES = {
