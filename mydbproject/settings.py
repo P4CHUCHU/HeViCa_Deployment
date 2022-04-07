@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-qn8(zvw3v9twgc3dy65f5$g7o^28$i3k0+z067b+58^)b*b4$_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['group9-hevica.azurewebsites.net']
+ALLOWED_HOSTS = ['group9-hevica.azurewebsites.net','127.0.0.1']
 
 
 # Application definition
@@ -72,17 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mydbproject.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -97,10 +86,6 @@ DATABASES = {
     }
     
 }
-
-
-# Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
