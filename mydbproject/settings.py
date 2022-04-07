@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-qn8(zvw3v9twgc3dy65f5$g7o^28$i3k0+z067b+58^)b*b4$_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['group9-hevica.azurewebsites.net','127.0.0.1']
 
 
 # Application definition
@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myappcabahug'
-    #'django_extensions'
 ]
 
 MIDDLEWARE = [
@@ -47,7 +46,6 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleWare',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -59,7 +57,7 @@ ROOT_URLCONF = 'mydbproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,18 +73,34 @@ TEMPLATES = [
 WSGI_APPLICATION = 'mydbproject.wsgi.application'
 
 
+# Database
+# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'group9@it342-student-group9',
-        'PASSWORD': 'HeViCa2022',
-        'HOST': 'it342-student-group9.postgres.database.azure.com',
-        'PORT': '5432',
-        'OPTIONS': {"sslmode":"require"},
-    }   
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mydbproject',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'OPTIONS': {
+        'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
+    }
+    
 }
 
+
+# Password validation
+# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -120,10 +134,17 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+#
+#MEDIA_URL = '/images/'
 
-STATIC_ROOT = BASE_DIR/'staticfiles'
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'static\app'),
+#]
+
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'static\app/images')
+#
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
